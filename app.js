@@ -16,18 +16,19 @@ function studentController($scope,$http,$q) {
             });
 			var promise1 = $http.get(purl1)
 			var promise2 = $http.get(purl2);
-			$q.all([promise1, promise2]).then(function(results){
+			var promise3 = Promise.resolve(promise1);
+			promise3.then(function(value) {
+			  console.log(value);
+			  $scope.fsent = value.data.sent;
+			  // expected output: Array [1, 2, 3]
+			});
+			$q.all([promise1, promise2,promise3]).then(function(results){
 				console.log(results);
 				$scope.mysent = $scope.fsent +" "+results[1].data.sent; 
 			});
 			/** working with promises
 			**/
-			var promise1 = Promise.resolve(promise1);
-			promise1.then(function(value) {
-			  console.log(value);
-			  $scope.fsent = value.data.sent;
-			  // expected output: Array [1, 2, 3]
-			});
+			
 						
 			
 			
