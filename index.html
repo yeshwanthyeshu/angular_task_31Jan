@@ -1,27 +1,15 @@
 <html>
    <head>
       <title>Angular JS Simple ajax call </title>
-       <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-
-      <style>
-         table, th , td {
-            border: 1px solid grey;
-            border-collapse: collapse;
-            padding: 5px;
-         }
-         
-         table tr:nth-child(odd) {
-            background-color: #f2f2f2;
-         }
-         
-         table tr:nth-child(even) {
-            background-color: #ffffff;
-         }
-      </style>
+		<script src = "./angular.js"></script>
+		<script src = "./app.js"></script>
+		<link rel="stylesheet" type="text/css" href="./style.css">
+	
+      
       
    </head>
    <body>
-      <h2>AngularJS Sample Application</h2>
+      <h2>AngularJS Sample Ajax call</h2>
       <div ng-app = "" ng-controller = "studentController">
       
          <table>
@@ -39,15 +27,7 @@
          </table>
       </div>
       
-      <script>
-         function studentController($scope,$http) {
-            var url = "data.txt";
-
-            $http.get(url).then( function(response) {
-               $scope.students = response.data;
-            });
-         }
-      </script>
+     
       
       
    </body>
