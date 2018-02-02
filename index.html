@@ -10,7 +10,7 @@
    </head>
    <body>
       <h2>AngularJS Sample Ajax call</h2>
-      <div ng-app = "" ng-controller = "studentController">
+      <div ng-app = "myApp" ng-controller = "studentController">
 		
 		 <table>
             <tr>
@@ -32,7 +32,26 @@
                my name is {{students1.Name}}
             </p>
 			<p>here is my sentence: {{mysent}}</p>
-         		 
+			<p>
+			here is my message from factory: {{message}}
+			</p>
+         	<!--this table is from factory service-->	
+			<div><h2>the following table is from http call in the factory</h2></div>
+			<table>
+            <tr>
+               <th>Name</th>
+               <th>Roll No</th>
+               <th>Percentage</th>
+            </tr>
+         
+            <tr ng-repeat = "student in factstudents">
+               <td>{{ student.Name }}</td>
+               <td>{{ student.RollNo }}</td>
+               <td>{{ student.Percentage }}</td>
+            </tr>
+         </table>
+				 
+				 
       </div>
       
      
